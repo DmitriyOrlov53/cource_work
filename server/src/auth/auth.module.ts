@@ -6,6 +6,6 @@ import { UsersStoreService } from './users-store/users-store.service';
 @Module({
 	imports: [DatabaseModule],
 	providers: [AuthGuard, UsersStoreService],
-	exports: [AuthGuard],
+	exports: [AuthGuard, UsersStoreService],
 })
 export class AuthModule {}

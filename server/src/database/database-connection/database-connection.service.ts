@@ -1,10 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import mongodb, { MongoClient } from 'mongodb';
+import * as mongodb from 'mongodb';
 
 @Injectable()
 export class DatabaseConnectionService {
+	connectionOptions: mongodb.MongoClientOptions = {
+		useUnifiedTopology: true,
+	};
 	readonly DBServerURL = 'mongodb://localhost:8000';
-	private connectionCahce?: MongoClient;
+	private connectionCahce?: mongodb.MongoClient;
 	constructor() {
 		this.connect();
 	}
@@ -17,7 +20,9 @@ export class DatabaseConnectionService {
 	}
 	async connect() {
 		try {
-			this.connectionCahce = await mongodb.connect(this.DBServerURL);
+			type ConnectionArgs = [string, mongodb.MongoClientOptions];
+			const connectionArgs: ConnectionArgs = [this.DBServerURL, this.connectionOptions];
+			this.connectionCahce = await mongodb.connect(...connectionArgs);
 		} catch (e) {
 			console.log(e);
 		}
