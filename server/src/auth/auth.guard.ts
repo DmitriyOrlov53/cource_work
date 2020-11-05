@@ -1,5 +1,5 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
-import { AuthData, RequestWithAuth } from './request-with-auth';
+import { AuthData, /* RequestWithAuth */ } from './request-with-auth';
 import { UsersStoreService } from './users-store/users-store.service';
 
 @Injectable()
@@ -14,7 +14,9 @@ export class AuthGuard implements CanActivate {
 		}
 	}
 	async canActivate(context: ExecutionContext): Promise<boolean> {
-		const request = context.switchToHttp().getRequest<RequestWithAuth>();
-		return await this.validateUser(request.authData);
+/* 		const request = context.switchToHttp().getRequest<RequestWithAuth>();
+		return await this.validateUser(request.authData); */
+		console.log(context);
+		return true;
 	}
 }
