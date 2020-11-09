@@ -11,8 +11,7 @@ export class ClerksController {
 		this.clerksStore.getRecords();
 	}
 	@Post('teachers')
-	@UseGuards(AuthGuard)
-	getAllTeachers() {
-		return this.getAllTeachers();
+	async getAllTeachers() {
+		return await this.clerksStore.getAllTaechers();
 	}
 }
