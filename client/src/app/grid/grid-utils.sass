@@ -1,0 +1,23 @@
+$width_of_page: 1920px
+$margin: 21px
+$n: 1
+$column_1: 140px
+
+$last_column: 12
+
+@function calculateWidth($item)
+    @return $item*$column_1 + $margin*$n*($item - 1)
+
+@mixin createGrid($prefix, $postfix: '', $width-prefix: '')
+    @for $item from 1 through 12
+        $selector: $prefix + '_' + $item
+        @if $postfix != ''
+            $selector: $selector + '_' + $postfix
+        :host(.#{$selector})
+            $new-width-prefix: ''
+            @if $width-prefix != ''
+                $new-width-prefix: $width-prefix + '-'
+            @if $item < $last_column
+                #{$new-width-prefix}width: calculateWidth($item) / $width_of_page * 100%
+            @else
+                width: 100%

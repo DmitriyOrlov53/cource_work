@@ -1,0 +1,9 @@
+@use '../../grid-utils' as utils
+@use '../../global' as global
+
+:host(.column)
+    display: flex
+    flex-direction: column
+    align-items: center
+
+@include utils.createGrid('column', '', 'min')
