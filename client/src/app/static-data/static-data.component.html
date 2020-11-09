@@ -1,0 +1,25 @@
+<nb-layout-column>
+  <nb-card size="giant" [nbSpinner]="fetchingData.teachers.length === 0" status="info">
+    <nb-card-header>Учителя и предметы</nb-card-header>
+    <nb-card-body>
+      <nb-accordion>
+        <nb-accordion-item *ngFor="let teacher of fetchingData.teachers">
+          <nb-accordion-item-header>
+            {{ teacher.surname }} {{ teacher.name }} {{ teacher.patronymic }}
+          </nb-accordion-item-header>
+          <nb-accordion-item-body>
+            <nb-list>
+              <nb-list-item *ngFor="let subject of teacher.subjects">
+                {{ subject.name }}
+              </nb-list-item>
+            </nb-list>
+          </nb-accordion-item-body>
+        </nb-accordion-item>
+      </nb-accordion>
+    </nb-card-body>
+  </nb-card>
+</nb-layout-column>
+<nb-layout-column>
+
+</nb-layout-column>
+<nb-layout-column></nb-layout-column>
