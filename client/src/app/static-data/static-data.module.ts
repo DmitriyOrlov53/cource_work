@@ -5,6 +5,7 @@ import { StaticDataRoutingModule } from './static-data-routing.module';
 import { StaticDataComponent } from './static-data.component';
 import { NbAccordionModule, NbCardModule, NbLayoutModule, NbListModule, NbSpinnerModule } from '@nebular/theme';
 import { FetchingStaticDataService } from './fetching-static-data/fetching-static-data.service';
+import { GridModule } from '../grid/grid.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FetchingStaticDataService } from './fetching-static-data/fetching-stati
     NbCardModule,
     NbListModule,
     NbSpinnerModule,
-    NbAccordionModule
+    NbAccordionModule,
+    GridModule
   ],
   providers: [FetchingStaticDataService]
 })

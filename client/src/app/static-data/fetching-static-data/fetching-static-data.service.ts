@@ -9,16 +9,20 @@ export class FetchingStaticDataService {
   students: Person[] = [];
   async getAllTeachers(): Promise<void> {
     this.teachers = await this.fetchData<Teacher[]>('/clerks/teachers');
-    console.log(this.teachers);
+  }
+  async getAllStudents(): Promise<void> {
+    this.students = await this.fetchData<Person[]>('/students/all');
   }
   async fetchData<T>(path: string): Promise<T> {
     const url = this.serverAddress.get() + path;
-    console.log(url);
     const response = await fetch(url, { method: 'POST', body: '{}' });
-    return response.json();
+    const json = await response.json();
+    console.log(json);
+    return json;
   }
-  async getAllData(): Promise<void> {
-    await this.getAllTeachers();
+  getAllData(): void {
+    this.getAllTeachers();
+    this.getAllStudents();
   }
   constructor(private serverAddress: ServerAdressService) { }
 }
