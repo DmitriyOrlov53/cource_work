@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
 
-const routes: Routes = [{
-  path: 'auth',
-  component: AuthComponent
-}];
+const routes: Routes = [
+  {
+    path: '/static-data',
+    loadChildren: () => import('./static-data/static-data.module').then(m => m.StaticDataModule)
+  },
+  {
+    path: '/gradebook',
+    loadChildren: () => import('./gradebook/gradebook.module').then(m => m.GradebookModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
