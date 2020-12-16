@@ -6,7 +6,7 @@ export class DatabaseConnectionService {
 	connectionOptions: mongodb.MongoClientOptions = {
 		useUnifiedTopology: true,
 	};
-	readonly DBServerURL = 'mongodb://localhost:8000';
+	readonly DBServerURL = 'mongodb://localhost:27017';
 	private connectionCahce?: mongodb.MongoClient;
 	constructor() {
 		this.connect();

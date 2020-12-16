@@ -5,5 +5,5 @@ import { Person } from 'src/database/objects/person.object';
 
 @Injectable()
 export class StoreOfStudentsService extends CollectionClientService<Person & Document> {
-	readonly collectionName = 'students';
+	readonly collectionName = 'Students';
 }

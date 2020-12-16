@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { Cursor } from 'mongodb';
 import { CollectionClientService } from 'src/database/collection-client.service';
 import { Teacher } from 'src/database/objects/teacher.object';
 import { Clerk } from '../../database/objects/clerk.object';
