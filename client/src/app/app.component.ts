@@ -9,15 +9,18 @@ import { NbMenuItem } from '@nebular/theme';
 export class AppComponent implements OnInit {
   menuItems: NbMenuItem[] = [
     {
-      title: 'Поиск'
+      title: 'Статистика',
+      link: '/statistic'
     },
     {
-      title: 'Статистика'
+      title: 'Журнал',
+      link: '/gradebook'
     },
     {
-      title: 'Журнал'
+      title: 'Учителя, Студенты, Предметы',
+      link: '/static-data'
     }
-  ]
-  ngOnInit() {
+  ];
+  ngOnInit(): void {
   }
 }

@@ -1,17 +1,14 @@
 <nb-layout>
   <nb-layout-header>
     <div class="header">
-      <img src="../assets/mustache-and-pipe.png" alt="site icon" class="site-icon">
+      <img src="../assets/logo.png" alt="site icon" class="site-icon">
       <h3 class="site-name">УСИК</h3>
-      <nb-search type="rotate-layout" placeholder="Начинайте искать" hint="Нажмите Enter">Поиск</nb-search>
-
     </div>
   </nb-layout-header>
   <nb-sidebar>
     <nb-menu [items]="menuItems"></nb-menu>
   </nb-sidebar>
   <nb-layout-column>
-    <nb-card size="giant">
-    </nb-card>
+    <router-outlet></router-outlet>
   </nb-layout-column>
 </nb-layout>
