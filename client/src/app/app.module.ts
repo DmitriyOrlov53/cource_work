@@ -4,12 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbButtonModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbCardModule, NbButtonModule, NbDialogModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { GridModule } from './grid/grid.module';
+import { AuthorComponent } from './author/author.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbMenuModule.forRoot(),
     NbCardModule,
     NbThemeModule.forRoot({ name: 'corporate' }),
+    GridModule,
+    NbButtonModule,
+    NbDialogModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

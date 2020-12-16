@@ -1,9 +1,12 @@
 <nb-layout>
   <nb-layout-header>
-    <div class="header">
-      <img src="../assets/logo.png" alt="site icon" class="site-icon">
-      <h3 class="site-name">УСИК</h3>
-    </div>
+    <app-grid-row align-items="center">
+      <app-grid-row [size]="1" align-items="center">
+        <img src="../assets/logo.png" class="site-icon" alt="site icon">
+        <h3>УСИК</h3>
+      </app-grid-row>
+      <button nbButton ghost (click)="openAuthorInfo()">Автор</button>
+    </app-grid-row>
   </nb-layout-header>
   <nb-sidebar>
     <nb-menu [items]="menuItems"></nb-menu>

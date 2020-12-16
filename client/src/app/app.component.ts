@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { NbDialogService, NbMenuItem } from '@nebular/theme';
+import { AuthorComponent } from './author/author.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,10 @@ export class AppComponent implements OnInit {
       link: '/static-data'
     }
   ];
+  openAuthorInfo(): void {
+    this.dialog.open(AuthorComponent);
+  }
+  constructor(private dialog: NbDialogService) {}
   ngOnInit(): void {
   }
 }
